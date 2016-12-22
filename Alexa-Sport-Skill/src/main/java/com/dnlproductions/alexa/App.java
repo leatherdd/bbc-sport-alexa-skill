@@ -1,13 +1,17 @@
 package com.dnlproductions.alexa;
 
+import com.sun.syndication.feed.synd.SyndFeed;
+
 /**
- * Hello world!
+ * Main class to run the project
  *
  */
-public class App 
-{
+public class App {
+    private static final String FEED_URL = "http://feeds.bbci.co.uk/sport/rss.xml?edition=int";
+
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SyndFeed feed = RSSConnector.getInstance().createFeed(FEED_URL);
+        RSSConnector.getInstance().printFeed(feed);
     }
 }
