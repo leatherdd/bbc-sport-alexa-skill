@@ -1,0 +1,27 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "PossibleQuestionsIntent"
+    },
+    {
+      "intent": "AllSportsNewsIntent"
+    }
+    /*
+    ,{
+      "intent": "GetEyeColourIntent",
+      "slots": [
+        {
+          "name": "EYECOLOUR",
+          "type": "EYECOLOUR"
+        },
+        {
+          "name": "PRONOUN",
+          "type": "PRONOUN"
+        }
+      ]
+    } */
+  ]
+}
