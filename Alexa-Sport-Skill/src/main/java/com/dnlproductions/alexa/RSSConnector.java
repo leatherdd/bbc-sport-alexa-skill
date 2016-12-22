@@ -55,18 +55,32 @@ public class RSSConnector {
         return feed;
     }
 
-    public ArrayList<String> getSetNumberOfItems(SyndFeed feed, int number) {
+    public String getSetNumberOfItems(List<SyndEntry> entries, int number) {
         ArrayList<String> list = new ArrayList<String>();
+        String str = "";
 
         if(number != 0) {
-
+            for(int i = 0; i < number; i++) {
+                list.add(entries.get(i).getDescription().getValue());
+            }
         }
 
-        return list;
+        str = convertArrayToString(list);
+
+        return str;
     }
 
-    public void printFeed(SyndFeed feed) {
-        List<SyndEntry> entries = feed.getEntries();
+    private String convertArrayToString(ArrayList<String> list) {
+        String temp = "";
+
+        for (String desc : list) {
+            temp += desc + " ";
+        }
+
+        return temp;
+    }
+
+    public void printFeed(List<SyndEntry> entries) {
 
         for (SyndEntry entry : entries) {
             System.out.println();

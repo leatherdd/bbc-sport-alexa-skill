@@ -12,6 +12,6 @@ public class App {
     public static void main( String[] args )
     {
         SyndFeed feed = RSSConnector.getInstance().createFeed(FEED_URL);
-        RSSConnector.getInstance().printFeed(feed);
+        System.out.println(RSSConnector.getInstance().getSetNumberOfItems(feed.getEntries(), 5));
     }
 }
